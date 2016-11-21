@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="SerwisDataSet" targetNamespace="http://tempuri.org/SerwisDataSet.xsd" xmlns:mstns="http://tempuri.org/SerwisDataSet.xsd" xmlns="http://tempuri.org/SerwisDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SerwisConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SerwisConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Serwis.Properties.Settings.GlobalReference.Default.SerwisConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SerwisConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SerwisConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Serwis.Properties.Settings.GlobalReference.Default.SerwisConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KlientTableAdapter" GeneratorDataComponentClassName="KlientTableAdapter" Name="Klient" UserDataComponentName="KlientTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SerwisConnectionString1 (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ID, Nazwisko, Imie, Ulica, NrDomu, NrMieszkania, Miasto, KodPocztowy, AdresEMail, Telefon FROM dbo.Klient</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="Nazwisko" DataSetColumn="Nazwisko" />
+              <Mapping SourceColumn="Imie" DataSetColumn="Imie" />
+              <Mapping SourceColumn="Ulica" DataSetColumn="Ulica" />
+              <Mapping SourceColumn="NrDomu" DataSetColumn="NrDomu" />
+              <Mapping SourceColumn="NrMieszkania" DataSetColumn="NrMieszkania" />
+              <Mapping SourceColumn="Miasto" DataSetColumn="Miasto" />
+              <Mapping SourceColumn="KodPocztowy" DataSetColumn="KodPocztowy" />
+              <Mapping SourceColumn="AdresEMail" DataSetColumn="AdresEMail" />
+              <Mapping SourceColumn="Telefon" DataSetColumn="Telefon" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PunktSerwisowyTableAdapter" GeneratorDataComponentClassName="PunktSerwisowyTableAdapter" Name="PunktSerwisowy" UserDataComponentName="PunktSerwisowyTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SerwisConnectionString (Settings)" DbObjectName="Serwis.dbo.PunktSerwisowy" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[PunktSerwisowy] WHERE (([ID] = @Original_ID) AND ([NazwaFirmy] = @Original_NazwaFirmy) AND ((@IsNull_NazwiskoOsobyDoKontaktu = 1 AND [NazwiskoOsobyDoKontaktu] IS NULL) OR ([NazwiskoOsobyDoKontaktu] = @Original_NazwiskoOsobyDoKontaktu)) AND ((@IsNull_ImieOsobyDoKontaktu = 1 AND [ImieOsobyDoKontaktu] IS NULL) OR ([ImieOsobyDoKontaktu] = @Original_ImieOsobyDoKontaktu)) AND ([Ulica] = @Original_Ulica) AND ([NrDomu] = @Original_NrDomu) AND ((@IsNull_NrMieszkania = 1 AND [NrMieszkania] IS NULL) OR ([NrMieszkania] = @Original_NrMieszkania)) AND ([Miasto] = @Original_Miasto) AND ([KodPocztowy] = @Original_KodPocztowy) AND ((@IsNull_AdresEMail = 1 AND [AdresEMail] IS NULL) OR ([AdresEMail] = @Original_AdresEMail)) AND ((@IsNull_Telefon = 1 AND [Telefon] IS NULL) OR ([Telefon] = @Original_Telefon)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NazwaFirmy" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwaFirmy" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NazwiskoOsobyDoKontaktu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NazwiskoOsobyDoKontaktu" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NazwiskoOsobyDoKontaktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwiskoOsobyDoKontaktu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ImieOsobyDoKontaktu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ImieOsobyDoKontaktu" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ImieOsobyDoKontaktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ImieOsobyDoKontaktu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Ulica" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ulica" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NrDomu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrDomu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NrMieszkania" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NrMieszkania" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NrMieszkania" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrMieszkania" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Miasto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Miasto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_KodPocztowy" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="KodPocztowy" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AdresEMail" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AdresEMail" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_AdresEMail" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AdresEMail" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Telefon" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Telefon" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Telefon" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[PunktSerwisowy] ([NazwaFirmy], [NazwiskoOsobyDoKontaktu], [ImieOsobyDoKontaktu], [Ulica], [NrDomu], [NrMieszkania], [Miasto], [KodPocztowy], [AdresEMail], [Telefon]) VALUES (@NazwaFirmy, @NazwiskoOsobyDoKontaktu, @ImieOsobyDoKontaktu, @Ulica, @NrDomu, @NrMieszkania, @Miasto, @KodPocztowy, @AdresEMail, @Telefon);
+SELECT ID, NazwaFirmy, NazwiskoOsobyDoKontaktu, ImieOsobyDoKontaktu, Ulica, NrDomu, NrMieszkania, Miasto, KodPocztowy, AdresEMail, Telefon FROM PunktSerwisowy WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NazwaFirmy" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwaFirmy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NazwiskoOsobyDoKontaktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwiskoOsobyDoKontaktu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ImieOsobyDoKontaktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ImieOsobyDoKontaktu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Ulica" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ulica" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NrDomu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrDomu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NrMieszkania" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrMieszkania" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Miasto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Miasto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@KodPocztowy" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="KodPocztowy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@AdresEMail" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AdresEMail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Telefon" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ID, NazwaFirmy, NazwiskoOsobyDoKontaktu, ImieOsobyDoKontaktu, Ulica, NrDomu, NrMieszkania, Miasto, KodPocztowy, AdresEMail, Telefon FROM dbo.PunktSerwisowy</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[PunktSerwisowy] SET [NazwaFirmy] = @NazwaFirmy, [NazwiskoOsobyDoKontaktu] = @NazwiskoOsobyDoKontaktu, [ImieOsobyDoKontaktu] = @ImieOsobyDoKontaktu, [Ulica] = @Ulica, [NrDomu] = @NrDomu, [NrMieszkania] = @NrMieszkania, [Miasto] = @Miasto, [KodPocztowy] = @KodPocztowy, [AdresEMail] = @AdresEMail, [Telefon] = @Telefon WHERE (([ID] = @Original_ID) AND ([NazwaFirmy] = @Original_NazwaFirmy) AND ((@IsNull_NazwiskoOsobyDoKontaktu = 1 AND [NazwiskoOsobyDoKontaktu] IS NULL) OR ([NazwiskoOsobyDoKontaktu] = @Original_NazwiskoOsobyDoKontaktu)) AND ((@IsNull_ImieOsobyDoKontaktu = 1 AND [ImieOsobyDoKontaktu] IS NULL) OR ([ImieOsobyDoKontaktu] = @Original_ImieOsobyDoKontaktu)) AND ([Ulica] = @Original_Ulica) AND ([NrDomu] = @Original_NrDomu) AND ((@IsNull_NrMieszkania = 1 AND [NrMieszkania] IS NULL) OR ([NrMieszkania] = @Original_NrMieszkania)) AND ([Miasto] = @Original_Miasto) AND ([KodPocztowy] = @Original_KodPocztowy) AND ((@IsNull_AdresEMail = 1 AND [AdresEMail] IS NULL) OR ([AdresEMail] = @Original_AdresEMail)) AND ((@IsNull_Telefon = 1 AND [Telefon] IS NULL) OR ([Telefon] = @Original_Telefon)));
+SELECT ID, NazwaFirmy, NazwiskoOsobyDoKontaktu, ImieOsobyDoKontaktu, Ulica, NrDomu, NrMieszkania, Miasto, KodPocztowy, AdresEMail, Telefon FROM PunktSerwisowy WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NazwaFirmy" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwaFirmy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NazwiskoOsobyDoKontaktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwiskoOsobyDoKontaktu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@ImieOsobyDoKontaktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ImieOsobyDoKontaktu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Ulica" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ulica" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NrDomu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrDomu" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NrMieszkania" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrMieszkania" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Miasto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Miasto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@KodPocztowy" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="KodPocztowy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@AdresEMail" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AdresEMail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Telefon" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Telefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NazwaFirmy" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwaFirmy" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NazwiskoOsobyDoKontaktu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NazwiskoOsobyDoKontaktu" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NazwiskoOsobyDoKontaktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwiskoOsobyDoKontaktu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_ImieOsobyDoKontaktu" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ImieOsobyDoKontaktu" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_ImieOsobyDoKontaktu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="ImieOsobyDoKontaktu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Ulica" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Ulica" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NrDomu" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrDomu" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NrMieszkania" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NrMieszkania" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NrMieszkania" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrMieszkania" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Miasto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Miasto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Original_KodPocztowy" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="KodPocztowy" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AdresEMail" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AdresEMail" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_AdresEMail" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AdresEMail" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Telefon" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Telefon" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_Telefon" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Telefon" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="Serwis.dbo.PunktSerwisowy" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="NazwaFirmy" DataSetColumn="NazwaFirmy" />
+              <Mapping SourceColumn="NazwiskoOsobyDoKontaktu" DataSetColumn="NazwiskoOsobyDoKontaktu" />
+              <Mapping SourceColumn="ImieOsobyDoKontaktu" DataSetColumn="ImieOsobyDoKontaktu" />
+              <Mapping SourceColumn="Ulica" DataSetColumn="Ulica" />
+              <Mapping SourceColumn="NrDomu" DataSetColumn="NrDomu" />
+              <Mapping SourceColumn="NrMieszkania" DataSetColumn="NrMieszkania" />
+              <Mapping SourceColumn="Miasto" DataSetColumn="Miasto" />
+              <Mapping SourceColumn="KodPocztowy" DataSetColumn="KodPocztowy" />
+              <Mapping SourceColumn="AdresEMail" DataSetColumn="AdresEMail" />
+              <Mapping SourceColumn="Telefon" DataSetColumn="Telefon" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ZgloszenieSerwisoweTableAdapter" GeneratorDataComponentClassName="ZgloszenieSerwisoweTableAdapter" Name="ZgloszenieSerwisowe" UserDataComponentName="ZgloszenieSerwisoweTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SerwisConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[ZgloszenieSerwisowe] WHERE (([ID] = @Original_ID) AND ([IDKlient] = @Original_IDKlient) AND ([IDPunktSerwisowy] = @Original_IDPunktSerwisowy) AND ([NazwaUrzadzenia] = @Original_NazwaUrzadzenia) AND ([NrSeryjnyUrzadzenia] = @Original_NrSeryjnyUrzadzenia) AND ([OpisUsterki] = @Original_OpisUsterki) AND ([DataZgloszenia] = @Original_DataZgloszenia) AND ([StatusZgloszenia] = @Original_StatusZgloszenia) AND ([PlanowanaDataRealizacji] = @Original_PlanowanaDataRealizacji) AND ((@IsNull_DataRealizacji = 1 AND [DataRealizacji] IS NULL) OR ([DataRealizacji] = @Original_DataRealizacji)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IDKlient" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IDKlient" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IDPunktSerwisowy" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IDPunktSerwisowy" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NazwaUrzadzenia" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwaUrzadzenia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_NrSeryjnyUrzadzenia" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrSeryjnyUrzadzenia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_OpisUsterki" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OpisUsterki" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_DataZgloszenia" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DataZgloszenia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_StatusZgloszenia" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="StatusZgloszenia" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_PlanowanaDataRealizacji" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanowanaDataRealizacji" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DataRealizacji" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DataRealizacji" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_DataRealizacji" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DataRealizacji" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[ZgloszenieSerwisowe] ([IDKlient], [IDPunktSerwisowy], [NazwaUrzadzenia], [NrSeryjnyUrzadzenia], [OpisUsterki], [DataZgloszenia], [StatusZgloszenia], [PlanowanaDataRealizacji], [DataRealizacji]) VALUES (@IDKlient, @IDPunktSerwisowy, @NazwaUrzadzenia, @NrSeryjnyUrzadzenia, @OpisUsterki, @DataZgloszenia, @StatusZgloszenia, @PlanowanaDataRealizacji, @DataRealizacji);
+SELECT ID, IDKlient, IDPunktSerwisowy, NazwaUrzadzenia, NrSeryjnyUrzadzenia, OpisUsterki, DataZgloszenia, StatusZgloszenia, PlanowanaDataRealizacji, DataRealizacji FROM ZgloszenieSerwisowe WHERE (ID = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IDKlient" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IDKlient" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IDPunktSerwisowy" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IDPunktSerwisowy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NazwaUrzadzenia" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NazwaUrzadzenia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@NrSeryjnyUrzadzenia" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="NrSeryjnyUrzadzenia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OpisUsterki" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OpisUsterki" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@DataZgloszenia" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DataZgloszenia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@StatusZgloszenia" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="StatusZgloszenia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@PlanowanaDataRealizacji" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanowanaDataRealizacji" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@DataRealizacji" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="DataRealizacji" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        ZgloszenieSerwisowe.ID, Klient.Nazwisko, Klient.Imie, PunktSerwisowy.NazwaFirmy, ZgloszenieSerwisowe.NazwaUrzadzenia, 
+                         ZgloszenieSerwisowe.NrSeryjnyUrzadzenia, ZgloszenieSerwisowe.OpisUsterki, ZgloszenieSerwisowe.DataZgloszenia, ZgloszenieSerwisowe.StatusZgloszenia, 
+                         ZgloszenieSerwisowe.PlanowanaDataRealizacji, ZgloszenieSerwisowe.DataRealizacji
+FROM            ZgloszenieSerwisowe INNER JOIN
+                         Klient ON ZgloszenieSerwisowe.IDKlient = Klient.ID INNER JOIN
+                         PunktSerwisowy ON ZgloszenieSerwisowe.IDPunktSerwisowy = PunktSerwisowy.ID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE       ZgloszenieSerwisowe
+SET                StatusZgloszenia = @StatusZgloszenia
+WHERE        (ID = @Original_ID); 
+SELECT ID, IDKlient, IDPunktSerwisowy, NazwaUrzadzenia, NrSeryjnyUrzadzenia, OpisUsterki, DataZgloszenia, StatusZgloszenia, PlanowanaDataRealizacji, DataRealizacji FROM ZgloszenieSerwisowe WHERE (ID = @ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="StatusZgloszenia" ColumnName="StatusZgloszenia" DataSourceName="Serwis.dbo.ZgloszenieSerwisowe" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@StatusZgloszenia" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="StatusZgloszenia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Original_ID" ColumnName="ID" DataSourceName="Serwis.dbo.ZgloszenieSerwisowe" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Original_ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ID" ColumnName="ID" DataSourceName="Serwis.dbo.ZgloszenieSerwisowe" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+              <Mapping SourceColumn="NazwaUrzadzenia" DataSetColumn="NazwaUrzadzenia" />
+              <Mapping SourceColumn="NrSeryjnyUrzadzenia" DataSetColumn="NrSeryjnyUrzadzenia" />
+              <Mapping SourceColumn="OpisUsterki" DataSetColumn="OpisUsterki" />
+              <Mapping SourceColumn="DataZgloszenia" DataSetColumn="DataZgloszenia" />
+              <Mapping SourceColumn="StatusZgloszenia" DataSetColumn="StatusZgloszenia" />
+              <Mapping SourceColumn="PlanowanaDataRealizacji" DataSetColumn="PlanowanaDataRealizacji" />
+              <Mapping SourceColumn="DataRealizacji" DataSetColumn="DataRealizacji" />
+              <Mapping SourceColumn="Nazwisko" DataSetColumn="Nazwisko" />
+              <Mapping SourceColumn="Imie" DataSetColumn="Imie" />
+              <Mapping SourceColumn="NazwaFirmy" DataSetColumn="NazwaFirmy" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="SerwisDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SerwisDataSet" msprop:Generator_UserDSName="SerwisDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Klient" msprop:Generator_TableClassName="KlientDataTable" msprop:Generator_TableVarName="tableKlient" msprop:Generator_RowChangedName="KlientRowChanged" msprop:Generator_TablePropName="Klient" msprop:Generator_RowDeletingName="KlientRowDeleting" msprop:Generator_RowChangingName="KlientRowChanging" msprop:Generator_RowEvHandlerName="KlientRowChangeEventHandler" msprop:Generator_RowDeletedName="KlientRowDeleted" msprop:Generator_RowClassName="KlientRow" msprop:Generator_UserTableName="Klient" msprop:Generator_RowEvArgName="KlientRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="Nazwisko" msprop:Generator_ColumnVarNameInTable="columnNazwisko" msprop:Generator_ColumnPropNameInRow="Nazwisko" msprop:Generator_ColumnPropNameInTable="NazwiskoColumn" msprop:Generator_UserColumnName="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Imie" msprop:Generator_ColumnVarNameInTable="columnImie" msprop:Generator_ColumnPropNameInRow="Imie" msprop:Generator_ColumnPropNameInTable="ImieColumn" msprop:Generator_UserColumnName="Imie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ulica" msprop:Generator_ColumnVarNameInTable="columnUlica" msprop:Generator_ColumnPropNameInRow="Ulica" msprop:Generator_ColumnPropNameInTable="UlicaColumn" msprop:Generator_UserColumnName="Ulica">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NrDomu" msprop:Generator_ColumnVarNameInTable="columnNrDomu" msprop:Generator_ColumnPropNameInRow="NrDomu" msprop:Generator_ColumnPropNameInTable="NrDomuColumn" msprop:Generator_UserColumnName="NrDomu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NrMieszkania" msprop:Generator_ColumnVarNameInTable="columnNrMieszkania" msprop:Generator_ColumnPropNameInRow="NrMieszkania" msprop:Generator_ColumnPropNameInTable="NrMieszkaniaColumn" msprop:Generator_UserColumnName="NrMieszkania" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Miasto" msprop:Generator_ColumnVarNameInTable="columnMiasto" msprop:Generator_ColumnPropNameInRow="Miasto" msprop:Generator_ColumnPropNameInTable="MiastoColumn" msprop:Generator_UserColumnName="Miasto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KodPocztowy" msprop:Generator_ColumnVarNameInTable="columnKodPocztowy" msprop:Generator_ColumnPropNameInRow="KodPocztowy" msprop:Generator_ColumnPropNameInTable="KodPocztowyColumn" msprop:Generator_UserColumnName="KodPocztowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdresEMail" msprop:Generator_ColumnVarNameInTable="columnAdresEMail" msprop:Generator_ColumnPropNameInRow="AdresEMail" msprop:Generator_ColumnPropNameInTable="AdresEMailColumn" msprop:Generator_UserColumnName="AdresEMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefon" msprop:Generator_ColumnVarNameInTable="columnTelefon" msprop:Generator_ColumnPropNameInRow="Telefon" msprop:Generator_ColumnPropNameInTable="TelefonColumn" msprop:Generator_UserColumnName="Telefon" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PunktSerwisowy" msprop:Generator_TableClassName="PunktSerwisowyDataTable" msprop:Generator_TableVarName="tablePunktSerwisowy" msprop:Generator_RowChangedName="PunktSerwisowyRowChanged" msprop:Generator_TablePropName="PunktSerwisowy" msprop:Generator_RowDeletingName="PunktSerwisowyRowDeleting" msprop:Generator_RowChangingName="PunktSerwisowyRowChanging" msprop:Generator_RowEvHandlerName="PunktSerwisowyRowChangeEventHandler" msprop:Generator_RowDeletedName="PunktSerwisowyRowDeleted" msprop:Generator_RowClassName="PunktSerwisowyRow" msprop:Generator_UserTableName="PunktSerwisowy" msprop:Generator_RowEvArgName="PunktSerwisowyRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="NazwaFirmy" msprop:Generator_ColumnVarNameInTable="columnNazwaFirmy" msprop:Generator_ColumnPropNameInRow="NazwaFirmy" msprop:Generator_ColumnPropNameInTable="NazwaFirmyColumn" msprop:Generator_UserColumnName="NazwaFirmy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NazwiskoOsobyDoKontaktu" msprop:Generator_ColumnVarNameInTable="columnNazwiskoOsobyDoKontaktu" msprop:Generator_ColumnPropNameInRow="NazwiskoOsobyDoKontaktu" msprop:Generator_ColumnPropNameInTable="NazwiskoOsobyDoKontaktuColumn" msprop:Generator_UserColumnName="NazwiskoOsobyDoKontaktu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ImieOsobyDoKontaktu" msprop:Generator_ColumnVarNameInTable="columnImieOsobyDoKontaktu" msprop:Generator_ColumnPropNameInRow="ImieOsobyDoKontaktu" msprop:Generator_ColumnPropNameInTable="ImieOsobyDoKontaktuColumn" msprop:Generator_UserColumnName="ImieOsobyDoKontaktu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ulica" msprop:Generator_ColumnVarNameInTable="columnUlica" msprop:Generator_ColumnPropNameInRow="Ulica" msprop:Generator_ColumnPropNameInTable="UlicaColumn" msprop:Generator_UserColumnName="Ulica">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NrDomu" msprop:Generator_ColumnVarNameInTable="columnNrDomu" msprop:Generator_ColumnPropNameInRow="NrDomu" msprop:Generator_ColumnPropNameInTable="NrDomuColumn" msprop:Generator_UserColumnName="NrDomu">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NrMieszkania" msprop:Generator_ColumnVarNameInTable="columnNrMieszkania" msprop:Generator_ColumnPropNameInRow="NrMieszkania" msprop:Generator_ColumnPropNameInTable="NrMieszkaniaColumn" msprop:Generator_UserColumnName="NrMieszkania" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Miasto" msprop:Generator_ColumnVarNameInTable="columnMiasto" msprop:Generator_ColumnPropNameInRow="Miasto" msprop:Generator_ColumnPropNameInTable="MiastoColumn" msprop:Generator_UserColumnName="Miasto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="KodPocztowy" msprop:Generator_ColumnVarNameInTable="columnKodPocztowy" msprop:Generator_ColumnPropNameInRow="KodPocztowy" msprop:Generator_ColumnPropNameInTable="KodPocztowyColumn" msprop:Generator_UserColumnName="KodPocztowy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AdresEMail" msprop:Generator_ColumnVarNameInTable="columnAdresEMail" msprop:Generator_ColumnPropNameInRow="AdresEMail" msprop:Generator_ColumnPropNameInTable="AdresEMailColumn" msprop:Generator_UserColumnName="AdresEMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="60" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Telefon" msprop:Generator_ColumnVarNameInTable="columnTelefon" msprop:Generator_ColumnPropNameInRow="Telefon" msprop:Generator_ColumnPropNameInTable="TelefonColumn" msprop:Generator_UserColumnName="Telefon" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ZgloszenieSerwisowe" msprop:Generator_TableClassName="ZgloszenieSerwisoweDataTable" msprop:Generator_TableVarName="tableZgloszenieSerwisowe" msprop:Generator_RowChangedName="ZgloszenieSerwisoweRowChanged" msprop:Generator_TablePropName="ZgloszenieSerwisowe" msprop:Generator_RowDeletingName="ZgloszenieSerwisoweRowDeleting" msprop:Generator_RowChangingName="ZgloszenieSerwisoweRowChanging" msprop:Generator_RowEvHandlerName="ZgloszenieSerwisoweRowChangeEventHandler" msprop:Generator_RowDeletedName="ZgloszenieSerwisoweRowDeleted" msprop:Generator_RowClassName="ZgloszenieSerwisoweRow" msprop:Generator_UserTableName="ZgloszenieSerwisowe" msprop:Generator_RowEvArgName="ZgloszenieSerwisoweRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+              <xs:element name="NazwaUrzadzenia" msprop:Generator_ColumnVarNameInTable="columnNazwaUrzadzenia" msprop:Generator_ColumnPropNameInRow="NazwaUrzadzenia" msprop:Generator_ColumnPropNameInTable="NazwaUrzadzeniaColumn" msprop:Generator_UserColumnName="NazwaUrzadzenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NrSeryjnyUrzadzenia" msprop:Generator_ColumnVarNameInTable="columnNrSeryjnyUrzadzenia" msprop:Generator_ColumnPropNameInRow="NrSeryjnyUrzadzenia" msprop:Generator_ColumnPropNameInTable="NrSeryjnyUrzadzeniaColumn" msprop:Generator_UserColumnName="NrSeryjnyUrzadzenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OpisUsterki" msprop:Generator_ColumnVarNameInTable="columnOpisUsterki" msprop:Generator_ColumnPropNameInRow="OpisUsterki" msprop:Generator_ColumnPropNameInTable="OpisUsterkiColumn" msprop:Generator_UserColumnName="OpisUsterki">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="600" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DataZgloszenia" msprop:Generator_ColumnVarNameInTable="columnDataZgloszenia" msprop:Generator_ColumnPropNameInRow="DataZgloszenia" msprop:Generator_ColumnPropNameInTable="DataZgloszeniaColumn" msprop:Generator_UserColumnName="DataZgloszenia" type="xs:dateTime" />
+              <xs:element name="StatusZgloszenia" msprop:Generator_ColumnVarNameInTable="columnStatusZgloszenia" msprop:Generator_ColumnPropNameInRow="StatusZgloszenia" msprop:Generator_ColumnPropNameInTable="StatusZgloszeniaColumn" msprop:Generator_UserColumnName="StatusZgloszenia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanowanaDataRealizacji" msprop:Generator_ColumnVarNameInTable="columnPlanowanaDataRealizacji" msprop:Generator_ColumnPropNameInRow="PlanowanaDataRealizacji" msprop:Generator_ColumnPropNameInTable="PlanowanaDataRealizacjiColumn" msprop:Generator_UserColumnName="PlanowanaDataRealizacji" type="xs:dateTime" />
+              <xs:element name="DataRealizacji" msprop:Generator_ColumnVarNameInTable="columnDataRealizacji" msprop:Generator_ColumnPropNameInRow="DataRealizacji" msprop:Generator_ColumnPropNameInTable="DataRealizacjiColumn" msprop:Generator_UserColumnName="DataRealizacji" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Nazwisko" msprop:Generator_ColumnVarNameInTable="columnNazwisko" msprop:Generator_ColumnPropNameInRow="Nazwisko" msprop:Generator_ColumnPropNameInTable="NazwiskoColumn" msprop:Generator_UserColumnName="Nazwisko">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Imie" msprop:Generator_ColumnVarNameInTable="columnImie" msprop:Generator_ColumnPropNameInRow="Imie" msprop:Generator_ColumnPropNameInTable="ImieColumn" msprop:Generator_UserColumnName="Imie" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NazwaFirmy" msprop:Generator_ColumnVarNameInTable="columnNazwaFirmy" msprop:Generator_ColumnPropNameInRow="NazwaFirmy" msprop:Generator_ColumnPropNameInTable="NazwaFirmyColumn" msprop:Generator_UserColumnName="NazwaFirmy">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Klient" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="PunktSerwisowy_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PunktSerwisowy" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="ZgloszenieSerwisowe_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ZgloszenieSerwisowe" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
